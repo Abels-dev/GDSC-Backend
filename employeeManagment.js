@@ -76,7 +76,7 @@ const updateEmployee = (id, newName, newPosition, newDepartment) => {
    });
    if (isUpdated) {  // checks if it was updated successfully
       console.log("successfully updated the employee information");
-      jsonData = JSON.stringify(employeeList);
+      jsonData = JSON.stringify(employeeList); // update the json file 
    } else
       console.log("can't update the employee the employee id doesn't exist");
 };
@@ -91,7 +91,7 @@ const deleteEmployee = (id) => {
    });
    if (isDeleted) {  // checks if it was deleted successfully
       console.log("successfully deleted the employee");
-      jsonData = JSON.stringify(employeeList);
+      jsonData = JSON.stringify(employeeList); // update the json file 
    } else
       console.log("can't delete the employee the employee id doesn't exist");
 };
