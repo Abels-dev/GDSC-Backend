@@ -14,7 +14,7 @@ class Todo {
    render() {
       this.toDoContainer.innerHTML = `${this.todoList
          .map((todo) => {
-            return `<div><input type="checkbox"/><p>${todo}</p></div>`;
+            return `<div class="todo"><input type="checkbox"/><p>${todo}</p></div>`;
          })
          .join("")}`;
    }
