@@ -3,20 +3,24 @@ class Todo {
       this.inputText = document.getElementById("input");
       this.addBtn = document.getElementById("addBtn");
       this.toDoContainer = document.getElementById("todoList");
+      this.errorMSg = document.getElementById("errorMsg");
       this.todoList = [];
    }
    addItem() {
       if (this.inputText.value != "") {
          this.todoList.push(this.inputText.value);
          this.inputText.value = "";
+         this.inputText.style.border = "0";
+         this.errorMSg.style.display = "none";
+      } else {
+         this.inputText.style.border = "3px solid red";
+         this.errorMSg.style.display = "block";
       }
    }
    render() {
-      this.toDoContainer.innerHTML = `${this.todoList
-         .map((todo) => {
+      this.toDoContainer.innerHTML = this.todoList.map((todo) => {
             return `<div class="todo"><input type="checkbox"/><p>${todo}</p></div>`;
-         })
-         .join("")}`;
+         }).join("");
    }
 }
 class ToDoItem extends Todo {

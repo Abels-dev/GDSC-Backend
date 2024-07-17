@@ -26,12 +26,11 @@ h1 {
    margin-bottom: 40px;
    display: flex;
    gap: 20px;
-   align-items: center;
 }
 .form input {
    width: 300px;
    height: 45px;
-   border-radius: 15px;
+   border-radius: 8px;
    border: 0;
    outline: 0;
    padding: 10px 20px 10px;
@@ -45,6 +44,7 @@ h1 {
    font-weight: bold;
    border-radius: 8px;
    color: hsl(229, 25%, 31%);
+   margin-top: 2px;
 }
 .todo {
    display: flex;
@@ -59,4 +59,16 @@ h1 {
 .todo input {
    width: 20px;
    height: 20px;
+}
+.input-holder {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+.errorMsg {
+   color: red;
+   font-weight: 500;
+   font-size:0.8rem;
+   margin-left: 10px;
+   display: none;
 }

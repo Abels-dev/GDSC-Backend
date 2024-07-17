@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-do</title>
-    <link rel="stylesheet" href="to-do.css">
-    <script src="to-do.js" defer></script>
-</head>
-<body>
-    <main>
-        <h1>To-do List</h1>
-        <div class="container">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>To-do</title>
+      <link rel="stylesheet" href="to-do.css" />
+      <script src="to-do.js" defer></script>
+   </head>
+   <body>
+      <main>
+         <h1>To-do List</h1>
+         <div class="container">
             <div class="form">
-                <input type="text" id="input">
-                <button id="addBtn">Add Task</button>
+               <div class="input-holder">
+                  <input type="text" id="input" placeholder="write your task here" />
+                  <p id="errorMsg" class="errorMsg">can't add empty task</p>
+               </div>
+               <button id="addBtn">Add Task</button>
             </div>
-            <section id="todoList">
-                
-            </section>
-        </div>
-    </main>
-</body>
+            <section id="todoList"></section>
+         </div>
+      </main>
+   </body>
 </html>
