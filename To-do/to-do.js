@@ -9,7 +9,6 @@ class Todo {
    addItem() {
       if (this.inputText.value != "") {
          this.todoList.push(this.inputText.value);
-         this.inputText.value = "";
          this.inputText.style.border = "0";
          this.errorMSg.style.display = "none";
       } else {
@@ -18,9 +17,11 @@ class Todo {
       }
    }
    render() {
-      this.toDoContainer.innerHTML = this.todoList.map((todo) => {
-            return `<div class="todo"><input type="checkbox"/><p>${todo}</p></div>`;
-         }).join("");
+      const addedTask = this.todoList[this.todoList.length - 1];
+      const item = `<div class="todo"><input type="checkbox"/><p>${addedTask}</p></div>`;
+      if (this.inputText.value != "")
+         this.toDoContainer.insertAdjacentHTML("beforeend", item);
+      this.inputText.value = "";
    }
 }
 class ToDoItem extends Todo {
@@ -44,7 +45,7 @@ todo.addBtn.addEventListener("click", () => {
    todo.addItem();
    todo.render();
 });
-todo.toDoContainer.addEventListener("click", (event) => {
+todo.toDoContainer.addEventListener("change", (event) => {
    const checkBox = event.target;
    const item = checkBox.parentElement;
    toDoItem.toggleCompletion(checkBox, item);
