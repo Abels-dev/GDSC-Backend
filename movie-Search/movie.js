@@ -3,7 +3,7 @@ const searchedResult = document.getElementById("searchResult");
 const detailedInfo = document.getElementById("details");
 const searchBtn = document.getElementById("searchBtn");
 const errorMsg = document.getElementById("errorMsg");
-//  http://www.omdbapi.com/?i=tt3896198&apikey=fbbdc2e4
+const loadingIndicator = document.getElementById("loading");
 
 const getMovie = async (searchMethod, searchValue) => {
    try {
@@ -19,35 +19,45 @@ const getMovie = async (searchMethod, searchValue) => {
 };
 const searchResult = async () => {
    const searchResults = await getMovie("s", searchedTitle.value);
+   loadingIndicator.style.display = "none";
    if (searchResults.Response == "True") {
       errorMsg.style.display = "none";
+      searchedResult.style.display = "block";
       searchedResult.innerHTML = searchResults.Search.map((result) => {
-         return `<div><p>${result.Title} <p/><span>${result.Year}</span></div>`;
+         return `<div class="searchedItem"><p class="title">${result.Title} -<p/>
+            <span>${result.Year}</span></div>`;
       }).join("");
    } else {
       errorMsg.style.display = "block";
       errorMsg.textContent = searchResults.Error;
+      searchedResult.style.display = "none";
    }
 };
 const movieDetail = async (title) => {
    const movieInfo = await getMovie("t", title);
-   detailedInfo.innerHTML = `<div>
-          <p>Title : ${movieInfo.Title}</p>
-          <img src=${movieInfo.Poster}/>
-          <p>Genre : ${movieInfo.Genre}</p>
-          <p>Release date : ${movieInfo.Released}</p>
-          <p>Plot : ${movieInfo.Plot}</p>
-     </div>
-     `;
+   loadingIndicator.style.display = "none";
+   if (movieInfo.Response == "True") {
+      detailedInfo.style.display = "block";
+      detailedInfo.innerHTML = `<div>
+      <h2><b>Title</b> : ${movieInfo.Title}</h2>
+      <img src=${movieInfo.Poster}/>
+      <p><b>Genre</b> : ${movieInfo.Genre}</p>
+      <p><b>Release date</b> : ${movieInfo.Released}</p>
+      <p><b>Plot</b> : ${movieInfo.Plot}</p>
+ </div>`;
+   }
 };
 searchBtn.onclick = () => {
+   loadingIndicator.style.display = "block";
+   detailedInfo.innerHTML = "";
    detailedInfo.style.display = "none";
-   searchedResult.style.display = "block";
    searchResult();
 };
 searchedResult.addEventListener("click", (event) => {
+   loadingIndicator.style.display = "block";
    const title = event.target.textContent;
-   detailedInfo.style.display = "block";
+   searchedResult.textContent = "";
    searchedResult.style.display = "none";
+   searchedTitle.value = "";
    movieDetail(title);
 });

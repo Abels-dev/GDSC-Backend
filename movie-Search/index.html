@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>movie search</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="movie.js" defer></script>
-</head>
-<body>
-    <section class="searchBar">
-        <input id="searchBar" type="text" placeholder="enter movie title">
-        <button id="searchBtn">search</button>
-        <p id="errorMsg"></p>
-    </section>
-    <section class="searchResults" id="searchResult">
-       
-    </section>
-    <section class="movieDetails" id="details">
-        
-    </section>
-</body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>movie search</title>
+      <link rel="stylesheet" href="style.css" />
+      <script src="movie.js" defer></script>
+   </head>
+   <body>
+      <h1>Movie Search</h1>
+      <section class="searchBar">
+         <input id="searchBar" type="text" placeholder="enter movie title" />
+         <button id="searchBtn">search</button>
+         <p id="errorMsg" class="error"></p>
+         <div class="loading" id="loading"></div>
+      </section>
+      <section class="searchResults" id="searchResult"></section>
+      <section class="movieDetails" id="details"></section>
+   </body>
 </html>
