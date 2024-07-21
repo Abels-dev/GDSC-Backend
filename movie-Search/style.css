@@ -1,0 +1,102 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   min-height: 100vh;
+   padding: 20px;
+   font-family: "Courier New", Courier, monospace;
+   background: linear-gradient(#173964, #0a2438);
+   background-repeat: no-repeat;
+}
+h1 {
+   text-align: center;
+   background-color: hsl(5, 85%, 63%);
+   padding: 10px;
+   color: hsl(236, 13%, 42%);
+   margin-bottom: 40px;
+}
+.searchBar {
+   margin-bottom: 10px;
+   font-size: 1.1rem;
+   font-weight: 600;
+}
+.searchBar input {
+   padding: 10px;
+   border: 0;
+   outline: 0;
+   border-radius: 7px;
+   font: inherit;
+   text-transform: capitalize;
+   color: hsl(236, 13%, 42%);
+}
+.searchBar button {
+   padding: 10px;
+   font: inherit;
+   text-transform: capitalize;
+   border-radius: 7px;
+   color: hsl(236, 13%, 42%);
+   border: 0;
+}
+.searchResults {
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
+   padding: 10px;
+   display: none;
+}
+.searchedItem {
+   display: flex;
+   gap: 5px;
+   color: hsl(233, 8%, 79%);
+   margin-bottom: 5px;
+   border-bottom: 2px solid #5c85bb;
+   padding-bottom: 4px;
+   font-size: 0.8rem;
+}
+.movieDetails {
+   display: none;
+   margin-top: 30px;
+   padding: 30px;
+   color: hsl(236, 13%, 42%);
+   line-height: 1.5;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
+}
+.movieDetails h2 {
+   margin-bottom: 10px;
+   font-size: 1.4rem;
+}
+.movieDetails img {
+   width: 200px;
+   margin-bottom: 10px;
+}
+.title {
+   cursor: pointer;
+}
+.title:hover {
+   opacity: 0.7;
+   text-decoration: underline;
+}
+.error {
+   color: red;
+   margin-top: 5px;
+   font-size: 0.9rem;
+}
+.loading {
+   margin-top: 20px;
+   margin-left: 70px;
+   width: 50px;
+   height: 50px;
+   border: 6px dotted #89a9d3;
+   border-radius: 50%;
+   transform: rotateY(360deg);
+   animation: spin 2s linear infinite;
+   display: none;
+}
+@keyframes spin {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
