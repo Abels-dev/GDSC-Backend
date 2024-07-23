@@ -41,6 +41,7 @@ const movieDetail = async (title) => {
       detailedInfo.innerHTML = `<div>
       <h2><b>Title</b> : ${movieInfo.Title}</h2>
       <img src=${movieInfo.Poster}/>
+      <p><b>Type</b> : ${movieInfo.Type}</p>
       <p><b>Genre</b> : ${movieInfo.Genre}</p>
       <p><b>Release date</b> : ${movieInfo.Released}</p>
       <p><b>Plot</b> : ${movieInfo.Plot}</p>
