@@ -1,0 +1,14 @@
+{
+  "name": "gdsc-backend",
+  "version": "1.0.0",
+  "description": "- This is a repo created to track Assignments given in GDSC-BACKEND Summer-Camp",
+  "main": "employeeManagment.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.5.2"
+  }
+}
