@@ -1,14 +1,6 @@
 const mongoose=require("mongoose")
 const Schema=mongoose.Schema;
-// title: String, required
-// ○
-// author: String, required
-// ○
-// yearPublished: Number, required
-// ○
-// genres: Array of Strings
 
-//availableCopies: Number, default to 5
 const bookSchema=new Schema({
       title:{
           type:String,
