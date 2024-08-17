@@ -36,11 +36,11 @@ app.put("/api/books/:id", (req, res) => {
          .catch((err) => res.status(404).send("Book not found"));
    } else res.status(400).send("title and author are required");
 });
-app.delete("api/books/:id", (req, res) => {
+app.delete("/api/books/:id", (req, res) => {
    const id = req.params.id;
-   console.log(id);
    Book.findByIdAndDelete(id)
       .then((data) => res.status(204).send())
       .catch((err) => res.status(404).send("Book not found"));
 });
+
 app.listen(3000);
